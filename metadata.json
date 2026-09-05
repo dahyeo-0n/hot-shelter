@@ -1,0 +1,8 @@
+{
+  "name": "폭염 무더위 쉼터 길안내",
+  "description": "현위치 기반으로 파랑(가장 가까움), 노랑(중간), 빨강(먼 곳) 순으로 무더위 쉼터를 확인하고 실시간 도보 길안내를 제공하는 서비스",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
