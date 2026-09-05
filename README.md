@@ -19,15 +19,18 @@ GitHub Pages에 배포하는 2가지 방법 중 편한 방식을 선택하실 �
 
 ---
 
-### 방법 2. `docs` 폴더 이용 배포 (ZIP 다운로드 시 가장 간편!)
-프로젝트에 빌드된 **`docs/`** 폴더(HTML 및 에셋 파일 포함)가 생성되어 있습니다.
+### 방법 2. `dist` 빌드 폴더 직접 배포 (또는 gh-pages 브랜치)
+프로젝트 내 `vite.config.ts`에 `base: './'` 설정이 적용되어 있어 빌드된 결과물이 상대 경로로 동작합니다.
 
-1. GitHub 저장소의 **Settings > Pages**로 이동합니다.
-2. **Build and deployment > Source**를 **`Deploy from a branch`**로 선택합니다.
-3. Branch를 **`main`**, 폴더를 **`/docs`**로 선택한 후 **Save**를 누릅니다.
-4. 별도의 빌드 과정 없이 즉시 `https://<사용자이름>.github.io/<저장소이름>/`로 사이트가 열립니다!
-
----
-
-### 방법 3. 내 컴퓨터에서 직접 열기
-다운로드한 파일 중 **`docs/index.html`**을 더블 클릭하거나 로컬 웹 서버(VSCode Live Server 등)로 열면 바로 실행됩니다.
+1. 로컬 터미널에서 빌드를 실행합니다:
+   ```bash
+   npm run build
+   ```
+2. 생성된 `dist` 폴더 내의 파일들을 확인합니다:
+   - `index.html` (메인 실행 파일)
+   - `assets/` (자바스크립트 및 스타일 파일)
+3. `dist` 폴더의 내용물을 저장소의 `gh-pages` 브랜치 또는 `docs/` 폴더에 업로드하거나 `gh-pages` 패키지를 통해 배포할 수 있습니다.
+   ```bash
+   # gh-pages 패키지 이용 시
+   npx gh-pages -d dist
+   ```
